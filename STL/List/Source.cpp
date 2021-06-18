@@ -6,28 +6,28 @@ using namespace std;
 //#define LIST
 //#define LIST_MERGING
 #define FORWARD_LIST
-template<typename T> void list_properties(const list<T>& lst)
+template<typename T> void list_properties(const forward_list<T>& lst)
 {
 	cout << "Size:      " << lst.size() << endl;
 	cout << "Max Size:  " << lst.max_size() << endl;
 }
-template<typename T> void print_list(const list<T>& lst)
+template<typename T> void print_list(const forward_list<T>& lst)
 {
 	if (lst.empty())
 	{
 		cout << "List is empty" << endl;
 		return;
 	}
-	for (list<int>::const_iterator it = lst.begin(); it != lst.end(); it++)
+	for (forward_list<int>::const_iterator it = lst.begin(); it != lst.end(); it++)
 	{
 		cout << *it << '\t';
 	}
 	cout << endl;
 	//for (int i : lst)cout << i << '\t'; cout << endl;
 }
-template<typename T>void reverse_print_list(const list<T>& lst)
+template<typename T>void reverse_print_list(const forward_list<T>& lst)
 {
-	for (list<int>::const_reverse_iterator it = lst.crbegin(); it != lst.crend(); it++)
+	for (forward_list<int>::const_reverse_iterator it = lst.crbegin(); it != lst.crend(); it++)
 	{
 		cout << *it << '\t';
 	}
@@ -35,7 +35,7 @@ template<typename T>void reverse_print_list(const list<T>& lst)
 }
 class list_wrapper
 {
-	list<int> lst;
+	forward_list<int> lst;
 };
 bool more_than_10(const int& value)
 {

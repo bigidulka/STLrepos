@@ -29,29 +29,28 @@ void main()
 	{
 		cout << it->first << '\t' << it->second << endl;
 	}*/
-	map<string, list<string>> dictionary =
+	map<string, forward_list<string>> dictionary =
 	{
-		pair<string, list<string>>("finite", {"ограниченный", "имеющий предел"}),
-		pair<string, list<string>>("adjacent", {"примыкающий", "смежный", "соседний"}),
-		pair<string, list<string>>("plot", {"карта", "план", "график", "сюжет"}),
-		pair<string, list<string>>("incident", {"случайность", "происшествие"}),
-		pair<string, list<string>>("splice", {"соединение", "сращивание"}),
+		pair<string, forward_list<string>>("finite", {"ограниченный", "имеющий предел"}),
+		pair<string, forward_list<string>>("adjacent", {"примыкающий", "смежный", "соседний"}),
+		pair<string, forward_list<string>>("plot", {"карта", "план", "график", "сюжет"}),
+		pair<string, forward_list<string>>("incident", {"случайность", "происшествие"}),
+		pair<string, forward_list<string>>("splice", {"соединение", "сращивание"}),
 	};
 	//cout << dictionary["finite"] << endl;
-	cout << dictionary["finite"].back() << endl;
-	dictionary["space"].assign({ "пространство", "космос" });
-	dictionary["space"].push_back({ "пустота" });
-	for (map<string, list<string>>::iterator it = dictionary.begin(); it != dictionary.end(); it++)
+	//cout << dictionary["finite"].back() << endl;
+	//dictionary["space"].assign({ "пространство", "космос" });
+	//dictionary["space"].push_back({ "пустота" });
+	for (map<string, forward_list<string>>::iterator it = dictionary.begin(); it != dictionary.end(); it++)
 	{
 		cout << it->first << ":";
-		cout.width(20);
-		for (list<string>::iterator jt = it->second.begin(); jt != it->second.end(); jt++)
-		{	
+		for (forward_list<string>::iterator jt = it->second.begin(); jt != it->second.end(); jt++)
+		{
 			cout << *jt << ", ";
 		}
 		cout << endl;
 	}
-	cout << dictionary.find("finite")->first << endl;
-	for (string i : dictionary.find("finite")->second)cout << i << '\t'; cout << endl;
+	//cout << dictionary.find("finite")->first << endl;
+	//for (string i : dictionary.find("finite")->second)cout << i << '\t'; cout << endl;
 #endif // MAP
 }

@@ -63,7 +63,7 @@ void main()
 	cout << "¬вод: "; cin >> room_number;
 
 	string directory = "File";
-	_chdir(directory.c_str());ц
+	_chdir(directory.c_str());
 
 	string source_file_name = room_number + " RAW.txt";
 	string dhcpd_file_name = room_number + ".dhcpd";
